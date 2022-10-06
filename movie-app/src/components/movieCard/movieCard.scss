@@ -1,0 +1,40 @@
+@import "../../common/colors.scss";
+
+.card-item {
+  background-color: $secondary-color;
+  width: 320px;
+  cursor: pointer;
+
+  .card-inner {
+
+    .card-top {
+      height: 300px;
+
+      img {
+        width: 320px;
+        height: 450px;
+      }
+    }
+
+    .card-bottom {
+      padding: 20px;
+
+      .card-info {
+        color: $font-primary;
+        margin-top: 150px;
+    
+
+        .title {
+          font-size: 22px;
+          font-weight: 400;
+          margin-bottom: 10px;
+
+        }
+
+        .year {
+          color: antiquewhite;
+        }
+      }
+    }
+  }
+}
