@@ -16,9 +16,16 @@ export const fetchAsyncShows = createAsyncThunk("shows/fetchAsyncShows", async()
     return res.data
 })
 
+export const fetchAsynDetail = createAsyncThunk("movies/fetchAsynDetail", async(id) => {
+    const res = await axios.get(`http://www.omdbapi.com/?apiKey=${APIKEY}&i=${id}&Plot=full`)
+    console.log(res)
+    return res.data
+})
+
 const initialState = {
     movies: {},
     shows: {},
+    selectMovieShow:{}
 
 }
 
@@ -45,6 +52,10 @@ const movieSlice = createSlice({
             console.log("Fetched successfully")
             return {...state, shows: action.payload}
         },
+        [fetchAsynDetail.fulfilled]: (state, action) => {
+            console.log("Fetched successfully")
+            return {...state, selectMovieShow: action.payload}
+        },
      
     }
 });
@@ -53,5 +64,6 @@ export const { addMovies } = movieSlice.actions;
 //state + movies( name of slice) + initialState 
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
+export const getAllDetails = (state) => state.movies.selectMovieShow;
 export default movieSlice.reducer;
 
