@@ -4,21 +4,21 @@ import axios from 'axios';
 
 export const fetchAsyncMovies = createAsyncThunk("movies/fetchAsyncMovies", async(term) => {
 
-    const res = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie`)
+    const res = await axios.get(`https://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie`)
     console.log(res)
     return res.data
 });
 
 export const fetchAsyncShows = createAsyncThunk("shows/fetchAsyncShows", async(term) => {
   
-    const res = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie`)
+    const res = await axios.get(`https://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie`)
 
     console.log(res)
     return res.data
 })
 
 export const fetchAsynDetail = createAsyncThunk("movies/fetchAsynDetail", async(id) => {
-    const res = await axios.get(`http://www.omdbapi.com/?apiKey=${APIKEY}&i=${id}&Plot=full`)
+    const res = await axios.get(`https://www.omdbapi.com/?apiKey=${APIKEY}&i=${id}&Plot=full`)
     console.log(res)
     return res.data
 })
