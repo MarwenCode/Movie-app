@@ -14,6 +14,20 @@
     font-weight: 600;
   }
 
+  .searchBar {
+    width: 50%;
+    margin-left: 450px;
+
+    .inputTerm{
+      width: 550px;
+      outline: none;
+      padding: 5px;
+    }
+    .submit{  
+      padding: 5px;
+    }
+  }
+
   
   .user-image img {
     width: 38px;

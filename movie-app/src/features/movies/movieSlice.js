@@ -2,16 +2,17 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { APIKEY } from '../../common/apis/movieApiKey';
 import axios from 'axios';
 
-export const fetchAsyncMovies = createAsyncThunk("movies/fetchAsyncMovies", async() => {
-    const movietext= "Harry";
-    const res = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${movietext}&type=movie`)
+export const fetchAsyncMovies = createAsyncThunk("movies/fetchAsyncMovies", async(term) => {
+
+    const res = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie`)
     console.log(res)
     return res.data
 });
 
-export const fetchAsyncShows = createAsyncThunk("shows/fetchAsyncShows", async() => {
-    const showstext= "friends";
-    const res = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${showstext}&type=movie`)
+export const fetchAsyncShows = createAsyncThunk("shows/fetchAsyncShows", async(term) => {
+  
+    const res = await axios.get(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie`)
+
     console.log(res)
     return res.data
 })

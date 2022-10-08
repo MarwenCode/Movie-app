@@ -11,8 +11,10 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAsyncMovies());
-    dispatch(fetchAsyncShows());
+    const movietext= "action";
+    const showstext= "comedy";
+    dispatch(fetchAsyncMovies(movietext));
+    dispatch(fetchAsyncShows(showstext))
   }, []);
 
 
