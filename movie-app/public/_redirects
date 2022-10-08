@@ -1,0 +1,4 @@
+https://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie
+https://www.omdbapi.com/?apikey=${APIKEY}&s=${term}&type=movie
+https://www.omdbapi.com/?apiKey=${APIKEY}&i=${id}&Plot=full
+
